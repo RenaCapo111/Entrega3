@@ -45,7 +45,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Martin gei");
+        jTextArea1.setText("Martin gei y weco\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
