@@ -27,34 +27,73 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         btnSeleccionarEntrenador1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         btnSeleccionarEntrenador2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         btnSeleccionarEntrenador3 = new javax.swing.JButton();
-        btnSalirElegirPlan = new javax.swing.JButton();
         btnHacerRutinaPropia = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        btnSalirElegirPlan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 102, 255));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setResizable(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanel2.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel2.setForeground(new java.awt.Color(0, 255, 51));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jLabel1.setText("Entrenador 1");
 
-        jLabel2.setText("Entrenador 3");
+        btnSeleccionarEntrenador1.setBackground(new java.awt.Color(0, 0, 0));
+        btnSeleccionarEntrenador1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnSeleccionarEntrenador1.setForeground(new java.awt.Color(51, 255, 153));
+        btnSeleccionarEntrenador1.setText("Seleccionar");
 
         jLabel3.setText("Entrenador 2");
 
-        btnSeleccionarEntrenador1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSeleccionarEntrenador1.setText("Seleccionar");
-
-        btnSeleccionarEntrenador2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSeleccionarEntrenador2.setBackground(new java.awt.Color(0, 0, 0));
+        btnSeleccionarEntrenador2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnSeleccionarEntrenador2.setForeground(new java.awt.Color(51, 255, 153));
         btnSeleccionarEntrenador2.setText("Seleccionar");
 
-        btnSeleccionarEntrenador3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Entrenador 3");
+
+        btnSeleccionarEntrenador3.setBackground(new java.awt.Color(0, 0, 0));
+        btnSeleccionarEntrenador3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnSeleccionarEntrenador3.setForeground(new java.awt.Color(51, 255, 153));
         btnSeleccionarEntrenador3.setText("Seleccionar");
 
-        btnSalirElegirPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoSalir.png"))); // NOI18N
-        btnSalirElegirPlan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnHacerRutinaPropia.setBackground(new java.awt.Color(0, 0, 0));
+        btnHacerRutinaPropia.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnHacerRutinaPropia.setForeground(new java.awt.Color(51, 255, 153));
+        btnHacerRutinaPropia.setText("Hacer Rutina Propia");
+        btnHacerRutinaPropia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHacerRutinaPropiaActionPerformed(evt);
+            }
+        });
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
+        btnSalirElegirPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoVolver.png"))); // NOI18N
+        btnSalirElegirPlan.setBorder(null);
         btnSalirElegirPlan.setContentAreaFilled(false);
         btnSalirElegirPlan.setPreferredSize(new java.awt.Dimension(50, 50));
         btnSalirElegirPlan.addActionListener(new java.awt.event.ActionListener() {
@@ -63,58 +102,84 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
             }
         });
 
-        btnHacerRutinaPropia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnHacerRutinaPropia.setText("Hacer Rutina Propia");
-        btnHacerRutinaPropia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHacerRutinaPropiaActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(btnSalirElegirPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(btnSalirElegirPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnHacerRutinaPropia)
+                .addGap(159, 159, 159))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnSeleccionarEntrenador1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addComponent(btnSeleccionarEntrenador2)
+                        .addGap(191, 191, 191)
+                        .addComponent(btnSeleccionarEntrenador3)
+                        .addGap(525, 525, 525))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(229, 229, 229)
+                        .addComponent(jLabel3)
+                        .addGap(199, 199, 199)
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addComponent(btnHacerRutinaPropia)
+                .addGap(141, 141, 141)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSeleccionarEntrenador3)
+                    .addComponent(btnSeleccionarEntrenador2)
+                    .addComponent(btnSeleccionarEntrenador1))
+                .addGap(137, 137, 137))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSeleccionarEntrenador1)
-                    .addComponent(jLabel1))
-                .addGap(108, 108, 108)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSeleccionarEntrenador2)
-                        .addGap(90, 90, 90)
-                        .addComponent(btnSeleccionarEntrenador3)))
-                .addGap(67, 67, 67)
-                .addComponent(btnHacerRutinaPropia)
-                .addContainerGap(52, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalirElegirPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 1180, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSeleccionarEntrenador1)
-                    .addComponent(btnHacerRutinaPropia)
-                    .addComponent(btnSeleccionarEntrenador2)
-                    .addComponent(btnSeleccionarEntrenador3))
-                .addGap(41, 41, 41)
-                .addComponent(btnSalirElegirPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -148,5 +213,8 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
