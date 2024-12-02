@@ -88,7 +88,7 @@ public class Endpoints {
         
         try {
             Connection con = Conex.getConexion();
-            String query="delete from tbRutinas where id='"+id+"'";
+            String query="delete from tbRutinas where codigo='"+codigo+"'";
             PreparedStatement ps = con.prepareStatement(query);    
             
             resultado = ps.executeUpdate()==1;
