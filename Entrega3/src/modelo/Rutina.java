@@ -10,15 +10,15 @@ package modelo;
  * @author antil
  */
 public class Rutina {
-    private int id;
+    
     private String nombreAlum;
     private String nombreProfesor;
     private String tipoRutina; // "básico", "medio", "avanzado"
     private double precioMensual;
 
     // Constructor
-    public Rutina(int id, String nombreAlum, String nombreProfesor, String tipoRutina, double precioMensual) {
-        this.id = id;
+    public Rutina( String nombreAlum, String nombreProfesor, String tipoRutina, double precioMensual) {
+       
         this.nombreAlum = nombreAlum;
         this.nombreProfesor = nombreProfesor;
         this.tipoRutina = tipoRutina;
@@ -26,13 +26,7 @@ public class Rutina {
     }
 
     // Getters y Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+ 
 
     public String getNombreAlum() {
         return nombreAlum;

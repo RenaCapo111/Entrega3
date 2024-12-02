@@ -229,22 +229,14 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         String tipoRutina;
         Rutina rutina;
         
-        tipoRutina = txtRutinaSencilla.getText();
+        tipoRutina = "HolaVichota";
         
-        rutina = new Rutina(1,"Alumno X","Nombre profesor",tipoRutina,15000);
+        rutina = new Rutina("Alumno X","Nombre profesor",tipoRutina,15000);
         Endpoints edp = new Endpoints();
         
-        if(edp.buscarRutina(1)==null)
-        {
-            edp.ingresarRutina(rutina);
-            JOptionPane.showMessageDialog(this, "Rutina Ingresada");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Rutina ya existente...ingrese otra", 
-                    "¡¡ Advertencia !!", JOptionPane.WARNING_MESSAGE);
-            txtRutinaSencilla.setText(null);
-        }
+        edp.ingresarRutina(rutina);
+        JOptionPane.showMessageDialog(this, "Rutina Ingresada");
+        
     }//GEN-LAST:event_btnSeleccionarEntrenador1ActionPerformed
 
     private void txtRutinaSencillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutinaSencillaActionPerformed

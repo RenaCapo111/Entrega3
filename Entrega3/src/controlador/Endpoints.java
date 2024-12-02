@@ -30,17 +30,17 @@ public class Endpoints {
         Connection con = Conex.getConexion();
         
         // Nueva consulta para insertar los datos correspondientes
-        String query = "INSERT INTO usuarios (id, nombre_alumno, nombre_rofesor, tipo_Rutina, precio_mensual) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO usuarios ( nombre_alumno, nombre_profesor, tipo_Rutina, precio_mensual) VALUES ( ?, ?, ?, ?)";
         
         // Preparar la sentencia SQL
         PreparedStatement ps = con.prepareStatement(query);
 
         // Asignar los valores a la sentencia preparada
-        ps.setInt(1, rutina.getId()); // Asignar el id de la rutina
-        ps.setString(2, rutina.getNombreAlum()); // Asignar el nombre del alumno
-        ps.setString(3, rutina.getNombreProfesor()); // Asignar el nombre del profesor
-        ps.setString(4, rutina.getTipoRutina()); // Asignar el tipo de rutina (básico, medio o avanzado)
-        ps.setDouble(5, rutina.getPrecioMensual()); // Asignar el precio mensual de la rutina
+       
+        ps.setString(1, rutina.getNombreAlum()); // Asignar el nombre del alumno
+        ps.setString(2, rutina.getNombreProfesor()); // Asignar el nombre del profesor
+        ps.setString(3, rutina.getTipoRutina()); // Asignar el tipo de rutina (básico, medio o avanzado)
+        ps.setDouble(4, rutina.getPrecioMensual()); // Asignar el precio mensual de la rutina
 
         // Ejecutar la consulta y verificar si se insertó correctamente
         resultado = ps.executeUpdate() == 1;
@@ -63,7 +63,7 @@ public class Endpoints {
         {
             Connection con = Conex.getConexion();
             
-            String query = "update usuarios set nombre_alumno=?, nombre_profesor=?, tipo_Rutina=?, precio_menual=? where Id=?";
+            String query = "update usuarios set nombre_alumno=?, nombre_profesor=?, tipo_Rutina=?, precio_menual=?";
             
             PreparedStatement ps = con.prepareStatement(query);
             
@@ -71,7 +71,7 @@ public class Endpoints {
             ps.setString(2, rutina.getNombreProfesor());
             ps.setString(3, rutina.getTipoRutina());
             ps.setDouble(4, rutina.getPrecioMensual());
-            ps.setInt(5, rutina.getId());
+     
             
             resultado = ps.executeUpdate()==1;
             ps.close();
@@ -85,13 +85,13 @@ public class Endpoints {
         return resultado;
     }
     
-    public boolean eliminarRutina(String id)
+    public boolean eliminarRutina(String nombre)
     {
         boolean resultado = false;
         
         try {
             Connection con = Conex.getConexion();
-            String query="delete from tablarutina where id='"+id+"'";
+            String query="delete from tablarutina where nombre_alumno='"+nombre+"'";
             PreparedStatement ps = con.prepareStatement(query);    
             
             resultado = ps.executeUpdate()==1;
@@ -105,18 +105,18 @@ public class Endpoints {
         return resultado;
     }
     
-    public Rutina buscarRutina(int id)
+    public Rutina buscarRutina(String nombre)
     {
         Rutina rutina=null;
         try{
             Connection con = Conex.getConexion();
-            String query = "SELECT * FROM tablarutina WHERE id = ?";
+            String query = "SELECT * FROM tablarutina WHERE nombre_alumno = ?";
             PreparedStatement ps = con.prepareStatement(query);
             
             ResultSet rs=ps.executeQuery();
             
             while (rs.next())            
-                rutina=new Rutina(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5));
+                rutina=new Rutina(rs.getString(1),rs.getString(2),rs.getString(3),rs.getDouble(4));
             ps.close();
         }catch (SQLException ex){
             Logger.getLogger(Endpoints.class.getName()).log(Level.SEVERE, null, ex);
