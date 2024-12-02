@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package controlador;
+
+import modelo.Rutina;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +15,7 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;  // Para Logger
 import java.util.ArrayList;
-import modelo.Rutina;
+
 
 /**
  *
@@ -27,7 +30,7 @@ public class Endpoints {
         Connection con = Conex.getConexion();
         
         // Nueva consulta para insertar los datos correspondientes
-        String query = "INSERT INTO tbRutinas (id, nombreAlum, nombreProfesor, tipoRutina, precioMensual) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO usuarios (id, nombre_alumno, nombre_rofesor, tipo_Rutina, precio_mensual) VALUES (?, ?, ?, ?, ?)";
         
         // Preparar la sentencia SQL
         PreparedStatement ps = con.prepareStatement(query);
@@ -60,7 +63,7 @@ public class Endpoints {
         {
             Connection con = Conex.getConexion();
             
-            String query = "update tbRutinas set NombreAlum()=?, NombreProfesor=?, TipoRutina=?, PrecioMensual=? where Id=?";
+            String query = "update usuarios set nombre_alumno=?, nombre_profesor=?, tipo_Rutina=?, precio_menual=? where Id=?";
             
             PreparedStatement ps = con.prepareStatement(query);
             
@@ -82,13 +85,13 @@ public class Endpoints {
         return resultado;
     }
     
-    public boolean eliminarRutina(String codigo)
+    public boolean eliminarRutina(String id)
     {
         boolean resultado = false;
         
         try {
             Connection con = Conex.getConexion();
-            String query="delete from tbRutinas where codigo='"+codigo+"'";
+            String query="delete from tablarutina where id='"+id+"'";
             PreparedStatement ps = con.prepareStatement(query);    
             
             resultado = ps.executeUpdate()==1;
@@ -107,7 +110,7 @@ public class Endpoints {
         Rutina rutina=null;
         try{
             Connection con = Conex.getConexion();
-            String query="Select * from tbColores where codigo='"+1+"'";
+            String query = "SELECT * FROM tablarutina WHERE id = ?";
             PreparedStatement ps = con.prepareStatement(query);
             
             ResultSet rs=ps.executeQuery();
