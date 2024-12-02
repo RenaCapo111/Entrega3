@@ -101,5 +101,26 @@ public class Endpoints {
         }
         return resultado;
     }
+    
+    public Rutina buscarRutina(int id)
+    {
+        Rutina rutina=null;
+        try{
+            Connection con = Conex.getConexion();
+            String query="Select * from tbColores where codigo='"+1+"'";
+            PreparedStatement ps = con.prepareStatement(query);
+            
+            ResultSet rs=ps.executeQuery();
+            
+            while (rs.next())            
+                rutina=new Rutina(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5));
+            ps.close();
+        }catch (SQLException ex){
+            Logger.getLogger(Endpoints.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (ClassNotFoundException ex){
+            Logger.getLogger(Endpoints.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rutina;     
+    }   
  }
 

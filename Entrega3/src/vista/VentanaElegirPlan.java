@@ -5,6 +5,10 @@
  */
 package vista;
 
+import controlador.Endpoints;
+import javax.swing.JOptionPane;
+import modelo.Rutina;
+
 /**
  *
  * @author maxim
@@ -38,6 +42,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         btnHacerRutinaPropia = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnSalirElegirPlan = new javax.swing.JButton();
+        txtRutinaSencilla = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 255));
@@ -65,6 +70,11 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         btnSeleccionarEntrenador1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         btnSeleccionarEntrenador1.setForeground(new java.awt.Color(51, 255, 153));
         btnSeleccionarEntrenador1.setText("Seleccionar");
+        btnSeleccionarEntrenador1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarEntrenador1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Entrenador 2");
 
@@ -119,13 +129,22 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
+        txtRutinaSencilla.setText("Rutina Sencilla");
+        txtRutinaSencilla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRutinaSencillaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(84, 84, 84)
+                .addComponent(txtRutinaSencilla, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnHacerRutinaPropia)
                 .addGap(159, 159, 159))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -155,9 +174,15 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                .addComponent(btnHacerRutinaPropia)
-                .addGap(141, 141, 141)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnHacerRutinaPropia)
+                        .addGap(141, 141, 141))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(txtRutinaSencilla, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSeleccionarEntrenador3)
                     .addComponent(btnSeleccionarEntrenador2)
@@ -199,6 +224,33 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
        ventIn.setVisible(true);//muestra la ventana
     }//GEN-LAST:event_btnHacerRutinaPropiaActionPerformed
 
+    private void btnSeleccionarEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarEntrenador1ActionPerformed
+        // TODO add your handling code here:
+        String tipoRutina;
+        Rutina rutina;
+        
+        tipoRutina = txtRutinaSencilla.getText();
+        
+        rutina = new Rutina(1,"Alumno X","Nombre profesor",tipoRutina,15000);
+        Endpoints edp = new Endpoints();
+        
+        if(edp.buscarRutina(1)==null)
+        {
+            edp.ingresarRutina(rutina);
+            JOptionPane.showMessageDialog(this, "Rutina Ingresada");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Rutina ya existente...ingrese otra", 
+                    "¡¡ Advertencia !!", JOptionPane.WARNING_MESSAGE);
+            txtRutinaSencilla.setText(null);
+        }
+    }//GEN-LAST:event_btnSeleccionarEntrenador1ActionPerformed
+
+    private void txtRutinaSencillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutinaSencillaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRutinaSencillaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,5 +268,6 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField txtRutinaSencilla;
     // End of variables declaration//GEN-END:variables
 }
