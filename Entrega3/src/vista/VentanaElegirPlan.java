@@ -33,18 +33,20 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        txtEntrenador1 = new javax.swing.JLabel();
         btnSeleccionarEntrenador1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        txtEntrenador2 = new javax.swing.JLabel();
         btnSeleccionarEntrenador2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        txtEntrenador3 = new javax.swing.JLabel();
         btnSeleccionarEntrenador3 = new javax.swing.JButton();
         btnHacerRutinaPropia = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnSalirElegirPlan = new javax.swing.JButton();
-        wawa = new javax.swing.JLabel();
+        txtRutinaSencilla = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtRutinaSencilla = new javax.swing.JTextArea();
+        txtRutina = new javax.swing.JTextArea();
+        txtRutinaMedia = new javax.swing.JLabel();
+        txtRutinaAvanzada = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 255));
@@ -66,7 +68,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(0, 255, 51));
         jPanel2.setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        jLabel1.setText("Entrenador 1");
+        txtEntrenador1.setText("Entrenador Renato");
 
         btnSeleccionarEntrenador1.setBackground(new java.awt.Color(0, 0, 0));
         btnSeleccionarEntrenador1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -78,19 +80,29 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Entrenador 2");
+        txtEntrenador2.setText("Entrenador Martin");
 
         btnSeleccionarEntrenador2.setBackground(new java.awt.Color(0, 0, 0));
         btnSeleccionarEntrenador2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         btnSeleccionarEntrenador2.setForeground(new java.awt.Color(51, 255, 153));
         btnSeleccionarEntrenador2.setText("Seleccionar");
+        btnSeleccionarEntrenador2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarEntrenador2ActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setText("Entrenador 3");
+        txtEntrenador3.setText("Entrenador Felipe");
 
         btnSeleccionarEntrenador3.setBackground(new java.awt.Color(0, 0, 0));
         btnSeleccionarEntrenador3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         btnSeleccionarEntrenador3.setForeground(new java.awt.Color(51, 255, 153));
         btnSeleccionarEntrenador3.setText("Seleccionar");
+        btnSeleccionarEntrenador3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarEntrenador3ActionPerformed(evt);
+            }
+        });
 
         btnHacerRutinaPropia.setBackground(new java.awt.Color(0, 0, 0));
         btnHacerRutinaPropia.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -131,12 +143,16 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        wawa.setText("Rutina Sencilla");
+        txtRutinaSencilla.setText("Rutina Sencilla");
 
-        txtRutinaSencilla.setColumns(20);
-        txtRutinaSencilla.setRows(5);
-        txtRutinaSencilla.setText("-3 Series de matar al mac\n-2\n-3");
-        jScrollPane1.setViewportView(txtRutinaSencilla);
+        txtRutina.setColumns(20);
+        txtRutina.setRows(5);
+        txtRutina.setText("-3\n-2\n-3");
+        jScrollPane1.setViewportView(txtRutina);
+
+        txtRutinaMedia.setText("Rutina media");
+
+        txtRutinaAvanzada.setText("Rutina Avanzada");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -147,27 +163,31 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnHacerRutinaPropia)
                         .addGap(159, 159, 159))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnSeleccionarEntrenador1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
-                        .addComponent(btnSeleccionarEntrenador2)
-                        .addGap(163, 163, 163)
-                        .addComponent(btnSeleccionarEntrenador3)
-                        .addGap(525, 525, 525))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(wawa)
+                            .addComponent(txtEntrenador1)
+                            .addComponent(txtRutinaSencilla))
+                        .addGap(229, 229, 229)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSeleccionarEntrenador2)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(229, 229, 229)
-                                .addComponent(jLabel3)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEntrenador2)
+                                    .addComponent(txtRutinaMedia))
                                 .addGap(199, 199, 199)
-                                .addComponent(jLabel2)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtRutinaAvanzada)
+                                    .addComponent(txtEntrenador3))))
+                        .addGap(0, 478, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnSeleccionarEntrenador1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSeleccionarEntrenador3)
+                        .addGap(454, 454, 454))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,11 +195,14 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
+                    .addComponent(txtEntrenador1)
+                    .addComponent(txtEntrenador2)
+                    .addComponent(txtEntrenador3))
                 .addGap(53, 53, 53)
-                .addComponent(wawa)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtRutinaSencilla)
+                    .addComponent(txtRutinaMedia)
+                    .addComponent(txtRutinaAvanzada))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
@@ -237,10 +260,12 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         // TODO add your handling code here:
         String tipoRutina;
         Rutina rutina;
+        String nombreProfesor;
         
         //tipoRutina = "HolaVichota";
         tipoRutina = txtRutinaSencilla.getText();
-        rutina = new Rutina("Alumno X","Nombre profesor",tipoRutina,15000);
+        nombreProfesor = txtEntrenador1.getText();
+        rutina = new Rutina("Alumno X",nombreProfesor,tipoRutina,15000);
         
         Endpoints edp = new Endpoints();
         
@@ -248,6 +273,40 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Rutina Ingresada");
         
     }//GEN-LAST:event_btnSeleccionarEntrenador1ActionPerformed
+
+    private void btnSeleccionarEntrenador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarEntrenador2ActionPerformed
+        // TODO add your handling code here:
+        String tipoRutina;
+        Rutina rutina;
+        String nombreProfesor;
+        
+        //tipoRutina = "HolaVichota";
+        tipoRutina = txtRutinaMedia.getText();
+        nombreProfesor = txtEntrenador2.getText();
+        rutina = new Rutina("Alumno X",nombreProfesor,tipoRutina,20000);
+        
+        Endpoints edp = new Endpoints();
+        
+        edp.ingresarRutina(rutina);
+        JOptionPane.showMessageDialog(this, "Rutina Ingresada");
+    }//GEN-LAST:event_btnSeleccionarEntrenador2ActionPerformed
+
+    private void btnSeleccionarEntrenador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarEntrenador3ActionPerformed
+        // TODO add your handling code here:
+        String tipoRutina;
+        Rutina rutina;
+        String nombreProfesor;
+        
+        //tipoRutina = "HolaVichota";
+        tipoRutina = txtRutinaAvanzada.getText();
+        nombreProfesor = txtEntrenador3.getText();
+        rutina = new Rutina("Alumno X",nombreProfesor,tipoRutina,25000);
+        
+        Endpoints edp = new Endpoints();
+        
+        edp.ingresarRutina(rutina);
+        JOptionPane.showMessageDialog(this, "Rutina Ingresada");
+    }//GEN-LAST:event_btnSeleccionarEntrenador3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,14 +319,16 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
     private javax.swing.JButton btnSeleccionarEntrenador1;
     private javax.swing.JButton btnSeleccionarEntrenador2;
     private javax.swing.JButton btnSeleccionarEntrenador3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtRutinaSencilla;
-    private javax.swing.JLabel wawa;
+    private javax.swing.JLabel txtEntrenador1;
+    private javax.swing.JLabel txtEntrenador2;
+    private javax.swing.JLabel txtEntrenador3;
+    private javax.swing.JTextArea txtRutina;
+    private javax.swing.JLabel txtRutinaAvanzada;
+    private javax.swing.JLabel txtRutinaMedia;
+    private javax.swing.JLabel txtRutinaSencilla;
     // End of variables declaration//GEN-END:variables
 }
