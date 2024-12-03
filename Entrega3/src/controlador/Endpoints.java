@@ -30,7 +30,7 @@ public class Endpoints {
         Connection con = Conex.getConexion();
         
         // Nueva consulta para insertar los datos correspondientes
-        String query = "INSERT INTO usuarios ( nombre_alumno, nombre_profesor, tipo_Rutina, precio_mensual) VALUES ( ?, ?, ?, ?)";
+        String query = "INSERT INTO usuarios (nombre_alumno, nombre_profesor, tipo_Rutina, precio_mensual) VALUES ( ?, ?, ?, ?)";
         
         // Preparar la sentencia SQL
         PreparedStatement ps = con.prepareStatement(query);
@@ -67,10 +67,10 @@ public class Endpoints {
             
             PreparedStatement ps = con.prepareStatement(query);
             
-            ps.setString(1, rutina.getNombreAlum());
-            ps.setString(2, rutina.getNombreProfesor());
-            ps.setString(3, rutina.getTipoRutina());
-            ps.setDouble(4, rutina.getPrecioMensual());
+            ps.setString(2, rutina.getNombreAlum());
+            ps.setString(3, rutina.getNombreProfesor());
+            ps.setString(4, rutina.getTipoRutina());
+            ps.setDouble(5, rutina.getPrecioMensual());
      
             
             resultado = ps.executeUpdate()==1;
@@ -91,7 +91,7 @@ public class Endpoints {
         
         try {
             Connection con = Conex.getConexion();
-            String query="DELETE FROM tablarutina where nombre_alumno='"+nombre+"'";
+            String query="DELETE FROM usuarios WHERE nombre_alumno='"+nombre+"'";
             PreparedStatement ps = con.prepareStatement(query);    
             
             resultado = ps.executeUpdate()==1;
@@ -110,13 +110,13 @@ public class Endpoints {
         Rutina rutina=null;
         try{
             Connection con = Conex.getConexion();
-            String query = "SELECT * FROM tablarutina WHERE nombre_alumno = ?";
+            String query = "SELECT * FROM usuarios WHERE nombre_alumno ='"+nombre+"'";
             PreparedStatement ps = con.prepareStatement(query);
             
             ResultSet rs=ps.executeQuery();
             
             while (rs.next())            
-                rutina=new Rutina(rs.getString(1),rs.getString(2),rs.getString(3),rs.getDouble(4));
+                rutina=new Rutina(rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5));
             ps.close();
         }catch (SQLException ex){
             Logger.getLogger(Endpoints.class.getName()).log(Level.SEVERE, null, ex);
@@ -131,13 +131,13 @@ public class Endpoints {
         ArrayList <Rutina> rutina=new ArrayList<>();
         try{
             Connection con = Conex.getConexion();
-            String query="SELECT * FROM tablarutina";
+            String query="Select * from usuarios";
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs=ps.executeQuery();
             Rutina ruti;
             while (rs.next())
             {
-                ruti=new Rutina(rs.getString(1),rs.getString(2),rs.getString(3),rs.getDouble(4));
+                ruti=new Rutina(rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5));
                 rutina.add(ruti);
             }
             ps.close();            
@@ -148,5 +148,7 @@ public class Endpoints {
         }
         return rutina;
     }
+    
+    
  }
 

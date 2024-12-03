@@ -20,7 +20,7 @@ public class Entrega3 {
         // TODO code application logic here
         VentanaPrincipal ventPrin = new VentanaPrincipal();
         ventPrin.setLocationRelativeTo(null);//muestra la ventana centrada en pantalla
-        ventPrin.setTitle("Proyecto Mac");//aquí escribo el título de la ventana
+        ventPrin.setTitle("FitFlow");//aquí escribo el título de la ventana
         ventPrin.setResizable(false);//se evita que el usuario pueda cambiar el tamaño de la ventana
         ventPrin.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);//evita que puedan cerrar la ventana con la X
         ventPrin.setVisible(true);//muestra la ventana
