@@ -47,17 +47,17 @@ public class VentanaMostrar extends javax.swing.JFrame {
 
         jtRutina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nombre Alumno", "Nombre Profesor", "Tipo Rutina", "Precio Rutina"
+                "ID", "Nombre Alumno", "Nombre Profesor", "Tipo Rutina", "Precio Rutina"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -131,12 +131,13 @@ public class VentanaMostrar extends javax.swing.JFrame {
             else
             {
                 DefaultTableModel dtm = (DefaultTableModel)jtRutina.getModel();
-                String[][] datos = new String[rutina.size()][4];                
+                String[][] datos = new String[rutina.size()][5];                
                 for (int i = 0; i < rutina.size(); i++) {
-                    datos[i][0]=rutina.get(i).getNombreAlum();
-                    datos[i][1]=rutina.get(i).getNombreProfesor();
-                    datos[i][2]=rutina.get(i).getTipoRutina();
-                    datos[i][3]=String.valueOf(rutina.get(i).getPrecioMensual());
+                    datos[i][0]=String.valueOf(rutina.get(i));
+                    datos[i][1]=rutina.get(i).getNombreAlum();
+                    datos[i][2]=rutina.get(i).getNombreProfesor();
+                    datos[i][3]=rutina.get(i).getTipoRutina();
+                    datos[i][4]=String.valueOf(rutina.get(i).getPrecioMensual());
                     dtm.addRow(datos[i]);
                 }
                 jtRutina.setModel(dtm);
@@ -145,11 +146,12 @@ public class VentanaMostrar extends javax.swing.JFrame {
         else
         {
             DefaultTableModel dtm = (DefaultTableModel)jtRutina.getModel();
-            String [] datos = new String[4];
-            datos[0]=r.getNombreAlum();
-            datos[1]=r.getNombreProfesor();
-            datos[2]=r.getTipoRutina();
-            datos[3]=String.valueOf(r.getPrecioMensual());
+            String [] datos = new String[5];
+            datos[0]=String.valueOf(r);
+            datos[1]=r.getNombreAlum();
+            datos[2]=r.getNombreProfesor();
+            datos[3]=r.getTipoRutina();
+            datos[4]=String.valueOf(r.getPrecioMensual());
             dtm.addRow(datos);
             jtRutina.setModel(dtm);
         }
