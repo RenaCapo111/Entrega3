@@ -112,7 +112,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnVerRutinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerRutinaActionPerformed
         // TODO add your handling code here:
-
+        VentanaMostrar ventMos = new VentanaMostrar();
+        ventMos.setLocationRelativeTo(null);//muestra la ventana centrada en pantalla
+        ventMos.setTitle("Mostrar rutinas");//aquí escribo el título de la ventana
+        ventMos.setResizable(false);//se evita que el usuario pueda cambiar el tamaño de la ventana
+        ventMos.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);//evita que puedan cerrar la ventana con la X
+        ventMos.setVisible(true);//muestra la ventana    
     }//GEN-LAST:event_btnVerRutinaActionPerformed
 
     private void btnElegirPlan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElegirPlan1ActionPerformed

@@ -124,6 +124,29 @@ public class Endpoints {
             Logger.getLogger(Endpoints.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rutina;     
-    }   
+    }
+    
+    public ArrayList <Rutina> obtenerTodos()
+    {
+        ArrayList <Rutina> rutina=new ArrayList<>();
+        try{
+            Connection con = Conex.getConexion();
+            String query="Select * from tbColores";
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet rs=ps.executeQuery();
+            Rutina ruti;
+            while (rs.next())
+            {
+                ruti=new Rutina(rs.getString(1),rs.getString(2),rs.getString(3),rs.getDouble(4));
+                rutina.add(ruti);
+            }
+            ps.close();            
+        }catch (SQLException ex){
+            Logger.getLogger(Endpoints.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (ClassNotFoundException ex){
+            Logger.getLogger(Endpoints.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rutina;
+    }
  }
 

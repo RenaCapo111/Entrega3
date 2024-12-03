@@ -5,17 +5,27 @@
  */
 package vista;
 
+import controlador.Endpoints;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import modelo.Rutina;
+
 /**
  *
  * @author maxim
  */
 public class VentanaMostrar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaMostrar
-     */
+    DefaultTableModel modelo = new DefaultTableModel();
+    
     public VentanaMostrar() {
         initComponents();
+        modelo.addColumn("Nombre Alumno");
+        modelo.addColumn("Nombre Profesor");
+        modelo.addColumn("Tipo de Rutina");
+        modelo.addColumn("Precio Rutina");
+        this.jtRutina.setModel(modelo);
     }
 
     /**
@@ -28,11 +38,14 @@ public class VentanaMostrar extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbRutina = new javax.swing.JTable();
+        jtRutina = new javax.swing.JTable();
+        btnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tbRutina.setModel(new javax.swing.table.DefaultTableModel(
+        jtRutina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -42,66 +55,127 @@ public class VentanaMostrar extends javax.swing.JFrame {
             new String [] {
                 "Nombre Alumno", "Nombre Profesor", "Tipo Rutina", "Precio Rutina"
             }
-        ));
-        jScrollPane1.setViewportView(tbRutina);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtRutina);
+
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconoVolver.png"))); // NOI18N
+        btnVolver.setBorder(null);
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
+                .addGap(89, 89, 89)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(152, 152, 152)
+                        .addComponent(btnBuscar)
+                        .addGap(189, 189, 189))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(87, 87, 87)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscar)
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        limpiarTabla();
+        Endpoints endp = new Endpoints();
+        Rutina r = endp.buscarRutina(txtBuscar.getText());
+        if(r==null)
+        {
+            ArrayList <Rutina> rutina = endp.obtenerTodos();
+            if(rutina.size()==0)
+            JOptionPane.showMessageDialog(this,"No hay rutinas para mostrar");
+            else
+            {
+                DefaultTableModel dtm = (DefaultTableModel)jtRutina.getModel();
+                String[][] datos = new String[rutina.size()][4];                
+                for (int i = 0; i < rutina.size(); i++) {
+                    datos[i][0]=rutina.get(i).getNombreAlum();
+                    datos[i][1]=rutina.get(i).getNombreProfesor();
+                    datos[i][2]=rutina.get(i).getTipoRutina();
+                    datos[i][3]=String.valueOf(rutina.get(i).getPrecioMensual());
+                    dtm.addRow(datos[i]);
                 }
+                jtRutina.setModel(dtm);
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaMostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaMostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaMostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaMostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+        else
+        {
+            DefaultTableModel dtm = (DefaultTableModel)jtRutina.getModel();
+            String [] datos = new String[4];
+            datos[0]=r.getNombreAlum();
+            datos[1]=r.getNombreProfesor();
+            datos[2]=r.getTipoRutina();
+            datos[3]=String.valueOf(r.getPrecioMensual());
+            dtm.addRow(datos);
+            jtRutina.setModel(dtm);
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaMostrar().setVisible(true);
-            }
-        });
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    public void limpiarTabla()
+    {
+        DefaultTableModel dtm=(DefaultTableModel)jtRutina.getModel();
+        int n = jtRutina.getRowCount()-1;
+        for (int i = 0; i <=n; i++) {
+            dtm.removeRow(dtm.getRowCount()-1);            
+        }
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbRutina;
+    private javax.swing.JTable jtRutina;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
