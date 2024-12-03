@@ -304,7 +304,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         String tipoRutina;
         Rutina rutina;
         String nombreProfesor;
-        String nombre;
+    
         String nombreAlumno;
         
         
@@ -318,6 +318,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         
         edp.ingresarRutina(rutina);
         JOptionPane.showMessageDialog(this, "Rutina Ingresada");
+        txtNombreAlumno.setText(null);
         
         
     }//GEN-LAST:event_btnSeleccionarEntrenador1ActionPerformed
@@ -339,6 +340,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         
         edp.ingresarRutina(rutina);
         JOptionPane.showMessageDialog(this, "Rutina Ingresada");
+        txtNombreAlumno.setText(null);
     }//GEN-LAST:event_btnSeleccionarEntrenador2ActionPerformed
 
     private void btnSeleccionarEntrenador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarEntrenador3ActionPerformed
@@ -361,7 +363,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         
         
         txtNombreAlumno.setText(null);
-        txtNombreAlumno.requestFocus();
+      
     }//GEN-LAST:event_btnSeleccionarEntrenador3ActionPerformed
 
     private void txtNombreAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreAlumnoActionPerformed
