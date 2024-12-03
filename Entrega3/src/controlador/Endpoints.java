@@ -63,7 +63,7 @@ public class Endpoints {
         {
             Connection con = Conex.getConexion();
             
-            String query = "update usuarios set nombre_alumno=?, nombre_profesor=?, tipo_Rutina=?, precio_menual=?";
+            String query = "UPDATE usuarios set nombre_alumno=?, nombre_profesor=?, tipo_Rutina=?, precio_menual=?";
             
             PreparedStatement ps = con.prepareStatement(query);
             
@@ -91,7 +91,7 @@ public class Endpoints {
         
         try {
             Connection con = Conex.getConexion();
-            String query="delete from tablarutina where nombre_alumno='"+nombre+"'";
+            String query="DELETE FROM tablarutina where nombre_alumno='"+nombre+"'";
             PreparedStatement ps = con.prepareStatement(query);    
             
             resultado = ps.executeUpdate()==1;
@@ -131,7 +131,7 @@ public class Endpoints {
         ArrayList <Rutina> rutina=new ArrayList<>();
         try{
             Connection con = Conex.getConexion();
-            String query="Select * from tbColores";
+            String query="SELECT * FROM tablarutina";
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs=ps.executeQuery();
             Rutina ruti;
