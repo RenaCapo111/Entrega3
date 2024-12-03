@@ -41,7 +41,6 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         btnSeleccionarEntrenador2 = new javax.swing.JButton();
         txtEntrenador3 = new javax.swing.JLabel();
         btnSeleccionarEntrenador3 = new javax.swing.JButton();
-        btnHacerRutinaPropia = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnSalirElegirPlan = new javax.swing.JButton();
         txtRutinaSencilla = new javax.swing.JLabel();
@@ -55,6 +54,9 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         jTextArea2 = new javax.swing.JTextArea();
         txtNombreAlumno = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 255));
@@ -76,6 +78,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(0, 255, 51));
         jPanel2.setPreferredSize(new java.awt.Dimension(1280, 720));
 
+        txtEntrenador1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtEntrenador1.setText("Entrenador Renato");
 
         btnSeleccionarEntrenador1.setBackground(new java.awt.Color(0, 0, 0));
@@ -88,6 +91,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
             }
         });
 
+        txtEntrenador2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtEntrenador2.setText("Entrenador Martin");
 
         btnSeleccionarEntrenador2.setBackground(new java.awt.Color(0, 0, 0));
@@ -100,6 +104,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
             }
         });
 
+        txtEntrenador3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtEntrenador3.setText("Entrenador Felipe");
 
         btnSeleccionarEntrenador3.setBackground(new java.awt.Color(0, 0, 0));
@@ -109,16 +114,6 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         btnSeleccionarEntrenador3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionarEntrenador3ActionPerformed(evt);
-            }
-        });
-
-        btnHacerRutinaPropia.setBackground(new java.awt.Color(0, 0, 0));
-        btnHacerRutinaPropia.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        btnHacerRutinaPropia.setForeground(new java.awt.Color(51, 255, 153));
-        btnHacerRutinaPropia.setText("Hacer Rutina Propia");
-        btnHacerRutinaPropia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHacerRutinaPropiaActionPerformed(evt);
             }
         });
 
@@ -178,7 +173,14 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Ingrese su nombre");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Ingrese su nombre:");
+
+        jLabel3.setText("Precio Mensual : 25000$");
+
+        jLabel4.setText("Precio Mensual : 30000$");
+
+        jLabel5.setText("Precio Mensual : 35000$");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -189,95 +191,84 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnSeleccionarEntrenador1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSeleccionarEntrenador3)
-                        .addGap(454, 454, 454))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEntrenador1)
-                            .addComponent(txtRutinaSencilla)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtEntrenador1)
+                                .addComponent(txtRutinaSencilla)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3)
+                                .addComponent(btnSeleccionarEntrenador1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(117, 117, 117)))
                         .addGap(112, 112, 112)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnHacerRutinaPropia)
-                                .addGap(159, 159, 159))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEntrenador2)
-                                    .addComponent(txtRutinaMedia)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(32, 32, 32)
-                                        .addComponent(btnSeleccionarEntrenador2)))
-                                .addGap(101, 101, 101)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtRutinaAvanzada)
-                                    .addComponent(txtEntrenador3)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 378, Short.MAX_VALUE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNombreAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                            .addComponent(txtEntrenador2)
+                            .addComponent(txtRutinaMedia)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(btnSeleccionarEntrenador2)))
+                    .addComponent(txtNombreAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(98, 98, 98)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRutinaAvanzada, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtEntrenador3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSeleccionarEntrenador3, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(158, 312, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEntrenador1)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombreAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtEntrenador3)
                     .addComponent(txtEntrenador2)
-                    .addComponent(txtEntrenador3))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtRutinaSencilla)
+                    .addComponent(txtEntrenador1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtRutinaAvanzada)
                     .addComponent(txtRutinaMedia)
-                    .addComponent(txtRutinaAvanzada))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                        .addComponent(btnHacerRutinaPropia)
-                        .addGap(141, 141, 141))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombreAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(txtRutinaSencilla))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSeleccionarEntrenador3)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSeleccionarEntrenador1)
                     .addComponent(btnSeleccionarEntrenador2)
-                    .addComponent(btnSeleccionarEntrenador1))
-                .addGap(137, 137, 137))
+                    .addComponent(btnSeleccionarEntrenador3))
+                .addGap(94, 94, 94))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 1180, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1270, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -288,16 +279,6 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
     private void btnSalirElegirPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirElegirPlanActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirElegirPlanActionPerformed
-
-    private void btnHacerRutinaPropiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHacerRutinaPropiaActionPerformed
-        // TODO add your handling code here:
-        VentanaRutinaPropia ventIn = new VentanaRutinaPropia();
-       ventIn.setLocationRelativeTo(null);//muestra la ventana centrada en pantalla
-       ventIn.setTitle("Hacer Rutina Propia");//aquí escribo el título de la ventana
-       ventIn.setResizable(false);//se evita que el usuario pueda cambiar el tamaño de la ventana
-       ventIn.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);//evita que puedan cerrar la ventana con la X
-       ventIn.setVisible(true);//muestra la ventana
-    }//GEN-LAST:event_btnHacerRutinaPropiaActionPerformed
 
     private void btnSeleccionarEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarEntrenador1ActionPerformed
         // TODO add your handling code here:
@@ -312,7 +293,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         tipoRutina = txtRutinaSencilla.getText();
         nombreProfesor = txtEntrenador1.getText();
         nombreAlumno = txtNombreAlumno.getText();
-        rutina = new Rutina(nombreAlumno,nombreProfesor,tipoRutina,15000);
+        rutina = new Rutina(nombreAlumno,nombreProfesor,tipoRutina,25000);
         
         Endpoints edp = new Endpoints();
         
@@ -329,12 +310,12 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         Rutina rutina;
         String nombreProfesor;
         String nombreAlumno;
-        
+     
         //tipoRutina = "HolaVichota";
         tipoRutina = txtRutinaMedia.getText();
         nombreProfesor = txtEntrenador2.getText();
         nombreAlumno = txtNombreAlumno.getText();
-        rutina = new Rutina(nombreAlumno,nombreProfesor,tipoRutina,20000);
+        rutina = new Rutina(nombreAlumno,nombreProfesor,tipoRutina,30000);
         
         Endpoints edp = new Endpoints();
         
@@ -354,7 +335,7 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
         tipoRutina = txtRutinaAvanzada.getText();
         nombreProfesor = txtEntrenador3.getText();
         nombreAlumno = txtNombreAlumno.getText();
-        rutina = new Rutina(nombreAlumno,nombreProfesor,tipoRutina,25000);
+        rutina = new Rutina(nombreAlumno,nombreProfesor,tipoRutina,35000);
         
         Endpoints edp = new Endpoints();
         
@@ -376,12 +357,14 @@ public class VentanaElegirPlan extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnHacerRutinaPropia;
     private javax.swing.JButton btnSalirElegirPlan;
     private javax.swing.JButton btnSeleccionarEntrenador1;
     private javax.swing.JButton btnSeleccionarEntrenador2;
     private javax.swing.JButton btnSeleccionarEntrenador3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
